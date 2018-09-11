@@ -13,6 +13,10 @@ export class HeaderComponent {
         this.menuToggle = !this.menuToggle;
     }
 
+    onFetchData() {
+        this.dataStorageService.getRecipes();
+    }
+
     onSaveData() {
         this.dataStorageService.storeRecipes().subscribe(
             response => {
