@@ -11,6 +11,12 @@
                     <a class="nav-link" routerLink="/shopping-list">Shopping List</a>
                 </li>
             </ul>
+            <div class="navbar-nav" routLinkActive="active">
+                <a class="nav-link" routerLink="/signup">Register</a>
+            </div>
+            <div class="navbar-nav" routLinkActive="active">
+                <a class="nav-link" routerLink="/signin">Login</a>
+            </div>
             <div class="navbar-nav dropdown mr-5" appDropdown (click)="toggleMenu()">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="cursor: pointer;">
                     Manage
