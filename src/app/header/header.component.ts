@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DataStorageService } from '../shared/data-storage.service';
+import { AuthService } from '../auth/auth.service';
 @Component({
     selector: 'app-header',
     templateUrl: './header.component.html'
@@ -7,7 +8,7 @@ import { DataStorageService } from '../shared/data-storage.service';
 export class HeaderComponent {
     menuToggle = false;
 
-    constructor(private dataStorageService: DataStorageService) {}
+    constructor(private dataStorageService: DataStorageService, private authService: AuthService) {}
 
     toggleMenu() {
         this.menuToggle = !this.menuToggle;
@@ -23,5 +24,9 @@ export class HeaderComponent {
                 console.log(response.text());
             }
         );
+    }
+
+    isLoggenIn() {
+        return this.authService.isAuthenticated();
     }
 }
